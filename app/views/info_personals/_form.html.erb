@@ -1,0 +1,47 @@
+<%= form_with(model: info_personal) do |form| %>
+  <% if info_personal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(info_personal.errors.count, "error") %> prohibited this info_personal from being saved:</h2>
+
+      <ul>
+        <% info_personal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :idUser, style: "display: block" %>
+    <%= form.number_field :idUser %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :country, style: "display: block" %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div>
+    <%= form.label :fav_charecter, style: "display: block" %>
+    <%= form.text_field :fav_charecter %>
+  </div>
+
+  <div>
+    <%= form.label :fav_comic, style: "display: block" %>
+    <%= form.text_field :fav_comic %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
